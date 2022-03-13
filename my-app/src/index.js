@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
+import "./index.css";
 
 // function Greeting() {
 //   return <h4>Hello, world!</h4>;
@@ -9,21 +10,38 @@ import ReactDom from "react-dom";
 //   return React.createElement("h1", {}, "Hello, world!");
 // }
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => {
-  return <h2>Hudhayfa</h2>;
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-const Message = () => {
-  return <p>This is a paragraph</p>;
+const Image = () => {
+  return (
+    <img src="https://m.media-amazon.com/images/I/61GW962NN3L._AC_UL640_FMwebp_QL65_.jpg" />
+  );
 };
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Title = () => {
+  return <h4>This is a book</h4>;
+};
+
+const Author = () => {
+  return <h5>Author Name</h5>;
+};
+
+ReactDom.render(<BookList />, document.getElementById("root"));
