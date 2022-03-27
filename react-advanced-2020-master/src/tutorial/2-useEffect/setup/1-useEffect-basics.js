@@ -6,8 +6,11 @@ const UseEffectBasics = () => {
 	const [value, setValue] = useState(0);
 	useEffect(() => {
 		// by default runs after every re-render
-		document.title = `You clicked ${value} times`;
-	});
+		if (value >= 1) {
+			document.title = `You clicked ${value} times`;
+		}
+	}, [value]);
+	// when value changes, this function runs (dependency array)
 	return (
 		<>
 			<h1>{value}</h1>
