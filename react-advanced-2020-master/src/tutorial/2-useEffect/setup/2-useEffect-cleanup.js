@@ -12,11 +12,11 @@ const UseEffectCleanup = () => {
 
 	useEffect(() => {
 		window.addEventListener("resize", checkSize);
-		return () => {
-			console.log("cleanup");
-			window.removeEventListener("resize", checkSize);
-		};
-	});
+		// return () => {
+		// 	console.log("cleanup");
+		// 	window.removeEventListener("resize", checkSize);
+		// };
+	}, []);
 
 	return (
 		<>
