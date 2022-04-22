@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import defaultImage from "/Users/hudzah/Documents/Programming/ReactCourse/react-advanced-2020-master/src/assets/default-image.jpeg";
 
 const Product = ({ image, name, price }) => {
+	const url = image && image.url;
 	return (
 		<article className="product">
 			product
-			<img src={image.url} alt={name} />
+			<img src={url || defaultImage} alt={name || "default"} />
 			<h4>{name}</h4>
 			<p>${price}</p>
 		</article>
